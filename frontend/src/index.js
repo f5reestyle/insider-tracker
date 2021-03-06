@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import Root from "pages/rootRoute";
+import "antd/dist/antd.css";
+import { AuthProvider } from "context/authentication/store";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <AuthProvider>
+      <Root />
+    </AuthProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
